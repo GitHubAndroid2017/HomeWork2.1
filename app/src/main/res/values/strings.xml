@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">HomeWork2.1</string>
+    <string name="LogInToYourAccount">Log in to your account</string>
+    <string name="Username">Username</string>
+    <string name="SignIn">Sign in</string>
+    <string name="Password">Password</string>
+    <string name="CreateAnAccount">Create an account</string>
+    <string name="HelloDasha">Hello Dasha!</string>
+    <string name="SignOut">Sign out</string>
+    <string name="EmailAddress">Email Address</string>
+</resources>
