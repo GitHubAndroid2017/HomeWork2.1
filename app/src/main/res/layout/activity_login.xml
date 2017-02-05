@@ -22,20 +22,6 @@
         android:textStyle="normal|bold"
         android:textColor="@color/colorPrimary" />
 
-    <Button
-        android:text="@string/SignIn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/SignIn"
-        android:onClick="methodSignIn"
-        android:background="@color/colorPrimary"
-        android:textColor="@android:color/background_light"
-        android:textAlignment="center"
-        android:padding="10dp"
-        android:fontFamily="sans-serif-medium"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -69,4 +55,34 @@
         android:background="@android:color/background_light"
         android:layout_below="@+id/TextPassword"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="@string/SignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/SignIn"
+        android:onClick="methodSignIn"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/background_light"
+        android:textAlignment="center"
+        android:padding="10dp"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/PasswordL"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:id="@+id/button"
+        android:textColor="@android:color/background_light"
+        android:background="@color/colorPrimary"
+        android:onClick="savingData"
+        android:text="@string/CreateAnAccount"
+        android:layout_marginTop="18dp"
+        android:textSize="8sp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/SignIn"
+        android:layout_alignLeft="@+id/SignIn"
+        android:layout_alignStart="@+id/SignIn"
+        android:fontFamily="sans-serif-medium" />
 </RelativeLayout>

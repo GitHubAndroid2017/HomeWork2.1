@@ -12,6 +12,13 @@ public class Registration extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
+
+        String status = QueryPreferences.getStoredQuery(this, "status");
+        String stValue = "true";
+        if (stValue.compareToIgnoreCase(status)==0){
+            Intent intent = new Intent(this, WelcomePage.class);
+            startActivity(intent);
+        }
     }
 
     public void savingData(View view) {
@@ -21,9 +28,19 @@ public class Registration extends AppCompatActivity {
         EditText Password = (EditText) findViewById(R.id.Password);
         String valuePassword = Password.getText().toString();
 
+
+
+        if((valueUsername.length() != 0)&&(valuePassword.length() != 0)){
+            QueryPreferences.setStoredQuery(this, "valueUsername", valueUsername);
+            QueryPreferences.setStoredQuery(this, "valuePassword", valuePassword);
+
+            Intent intent = new Intent(this, Login.class);
+            startActivity(intent);
+        }
+    }
+
+    public void methodSignIn(View view) {
         Intent intent = new Intent(this, Login.class);
-        intent.putExtra("valueUsername", valueUsername);
-        intent.putExtra("valuePassword", valuePassword);
         startActivity(intent);
     }
 }

@@ -11,18 +11,6 @@
     tools:context="ua.softgroup.homework21.Registration"
     android:background="@android:color/holo_blue_bright">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/CreateAnAccount"
-        android:textColor="@android:color/background_light"
-        android:background="@color/colorPrimary"
-        android:padding="10dp"
-        android:onClick="savingData"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:text="@string/CreateAnAccount" />
-
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -65,5 +53,33 @@
         android:layout_marginTop="93dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/CreateAnAccount"
+        android:textColor="@android:color/background_light"
+        android:background="@color/colorPrimary"
+        android:padding="10dp"
+        android:onClick="savingData"
+        android:text="@string/CreateAnAccount"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="@string/SignIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:onClick="methodSignIn"
+        android:background="@color/colorPrimary"
+        android:textColor="@android:color/background_light"
+        android:textAlignment="center"
+        android:padding="10dp"
+        android:fontFamily="sans-serif-medium"
+        android:layout_marginTop="23dp"
+        android:layout_below="@+id/CreateAnAccount"
+        android:layout_centerHorizontal="true"
+        android:textSize="8sp" />
 
 </RelativeLayout>

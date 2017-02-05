@@ -7,8 +7,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import java.util.Objects;
-
 public class Login extends AppCompatActivity {
 
     @Override
@@ -18,20 +16,31 @@ public class Login extends AppCompatActivity {
     }
 
     public void methodSignIn(View view) {
-        Intent intent = getIntent();
-        String valueUsernameL = intent.getStringExtra("valueUsername");
-        String valuePasswordL = intent.getStringExtra("valuePassword");
 
         EditText UsernameL = (EditText) findViewById(R.id.UsernameL);
         String User = UsernameL.getText().toString();
+
         EditText PasswordL = (EditText) findViewById(R.id.PasswordL);
         String Pass = PasswordL.getText().toString();
 
-        if (Objects.equals(valueUsernameL, User) && Objects.equals(valuePasswordL, Pass)){
-            intent = new Intent(this, WelcomePage.class);
-            startActivity(intent);
+
+        String queryU = QueryPreferences.getStoredQuery(this, "valueUsername");
+        String queryP = QueryPreferences.getStoredQuery(this, "valuePassword");
+
+        if (queryU.compareToIgnoreCase(User)==0){
+            if (queryP.compareToIgnoreCase(Pass)==0){
+                Intent intent = new Intent(this, WelcomePage.class);
+                startActivity(intent);
+            }else {
+                Toast.makeText(this, "invalid password", Toast.LENGTH_SHORT).show();
+            }
         } else {
-            Toast.makeText(this, "invalid login or password", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "invalid login", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public void savingData(View view) {
+        Intent intent = new Intent(this, Registration.class);
+        startActivity(intent);
     }
 }
